@@ -1,3 +1,7 @@
+## 1.0.0
+
+* Cleaning up.
+
 ## 0.0.2
 
 * update readme.

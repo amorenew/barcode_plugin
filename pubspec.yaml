@@ -1,7 +1,7 @@
 name: barcode_plugin
-description: A flutter plugin for Tablet Alps ax6737 to read Barcode.
-version: 0.0.2
-homepage: https://github.com/amorenew/alps_uhf_flutter.git
+description: A flutter plugin for Tablet Alps ax6737 to read Barcode lables.
+version: 1.0.0
+homepage: https://github.com/amorenew/barcode_plugin.git
 
 environment:
   sdk: ">=2.1.0 <3.0.0"
