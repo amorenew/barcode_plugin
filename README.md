@@ -1,14 +1,43 @@
 # barcode_plugin
 
-A new flutter plugin project.
+A flutter plugin for Tablet Alps ax6737 to read barcode.
 
-## Getting Started
+#### Library Pub link
+https://pub.dev/packages/barcode_plugin/
 
-This project is a starting point for a Flutter
-[plug-in package](https://flutter.dev/developing-packages/),
-a specialized package that includes platform-specific implementation code for
-Android and/or iOS.
+### Getting Started
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+##### In your Gradle exclude Flutter so files because libary is working in 32bit mode
+##### Only use release apk because running from IDE will not exclude 64bit files
+    `packagingOptions {
+        exclude 'lib/arm64-v8a/libflutter.so'
+        exclude 'lib/arm64-v8a/libapp.so'
+    }`
+
+- Import the library:
+   `import 'package:barcode_plugin/barcode_plugin.dart';`
+
+- Open connection to the barcode reader
+
+    `await BarcodePlugin.open;`
+
+- Check if connection is opened
+
+    `await BarcodePlugin.isOpen;`
+
+- Start scanning barcode labels
+
+    `await BarcodePlugin.startScanning;`
+
+- Close connection to the barcode reader
+
+    `await BarcodePlugin.close;`
+
+- Listen to scanner connection status
+
+   `BarcodePlugin.scannerStatusStream.receiveBroadcastStream().listen(updateData);`
+
+- Listen to barcode labels
+
+   `BarcodePlugin.barcodeStatusStream.receiveBroadcastStream().listen(updateData);`
+
